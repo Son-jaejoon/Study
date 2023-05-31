@@ -1,0 +1,14 @@
+1. 람다식 : 이름없는 함수 (#include <functional>)
+- 일반적으로 많이 사용은 안할 것 같은데 함수로 만들긴 애매모호한 함수 
+- [캡처] (매개변수 리스트) -> 반환형식 { 구문; }
+- auto func = [](int nParam) -> int { return nParam };
+- sort(arr.begin(), arr.end(), [](int a, int b) -> bool { return a < b };)
+
+- auto func = [nData](void) mutable -> void {cout << ++nData ;};
+일 시 mutable로 인해 람다식 내부에서만 nData값이 변경된다.
+- [=] : 변수 전체 복사 캡쳐, 디폴트 복사 캡쳐
+- [&] : 디폴트 참조 캡쳐
+- [=, &z] : 일부 복사, 일부 참조 캡쳐
+- 중복으로 캡쳐하는 것을 조심해야한다.
+
+//위 내용은 '이것이 C++이다'를 공부한 후 작성한 내용입니다.

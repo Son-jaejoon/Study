@@ -1,0 +1,13 @@
+1. null 조건부 연산자
+- A?.member : A가 null이면 null / 아닐 시 A의 member을 반환 
+- int? bar; bar = foo?.member
+- foo?[0] / foo?.Count 처럼 접근 가능
+
+2. 비트 연산자
+- a << b = a * 2b
+- a >> b = a / 2b
+
+3. null 병합 연산자
+- a ?? b : a가 Null 이면 b를, Null이 아니면 a를 반환
+
+// 위 내용은 '이것이 C#이다'를 공부한 후 작성한 내용입니다.

@@ -1,0 +1,14 @@
+1. switch 문 패턴매칭
+- obect obj = 123;
+- case int : / case float : / case string : / 처럼 object의 형식에 따라 case를 나눌 수 있다.
+
+2. switch 식
+- int grade = 90 ; / case 90 : break;  / 90 => "A", 
+
+3. 패턴 매칭
+- 선언 패턴 : if(param is int A) : param is int 인 경우 A에 param을 할당한다.
+- 형식 패턴 : if(param is int) : param is int, true - false
+- 목록 패턴 : int[] arr = {1, 2, 3} / arr is [1, <3, _] 참 이면 true, 거짓이면 false 반환
+                      arr is [<3, ...]을 하면 첫번째 이후는 검사하지 않는다.
+
+// 위 내용은 '이것이 C#이다'를 공부한 후 작성한 내용입니다.

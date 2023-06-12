@@ -1,0 +1,21 @@
+1. 매개변수 pass by value : 메소드 안에서만 값이 바뀜
+
+2. 매개변수 pass by reference : void func(ref int a), func(ref param) 원본이 바뀜
+- 참조 반환 가능 : ref int func() => return ref value; 
+   이를 통해 클래스 안의 변수 (int price)를 메소드(return ref price)를 통해 반환하면
+   ref int some = ref func(); (참조로 받음)일 시 some을 수정하면 price(원본) 수정된다.
+
+3. 출력 전용 매개변수 : 두 개 이상의 결과를 반환하고 싶을 때 ref 대신 out을 사용해라
+- void calculator(int a, int b, ref int divide, ref int remainder)
+   divide = a / b, remainder = a % b;
+- void calculator(int a, int b, out int divide, out int remainder)
+   위 동일
+- out의 경우 ref와 달리 메소드가 해당 매개변수에 결과를 저장하지 않으면 에러가 남.(할당 보장)
+
+4. 메소드 오버로딩 : 메소드의 이름은 같고, 매개변수의 수와 형식이 다를 때
+- 인수의 개수만 다를 경우 : int sum(params int[] args) 과 같이 parmas키워드와 배열을 통해 해결할 수 있음.
+
+5. 명명된 인수 : 메소드 호출 시 매개변수를 명명해 직관적이게 할 수 있음.(매개변수가 많아 헷갈릴 때 유용)
+- void printProfile(string name, string phone), printProfile(name : "이순신", phone : "010-");
+
+// 위 내용은 '이것이 C#이다'를 공부한 후 작성한 내용입니다.

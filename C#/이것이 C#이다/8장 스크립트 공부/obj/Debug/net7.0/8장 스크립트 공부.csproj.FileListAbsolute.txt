@@ -1,0 +1,15 @@
+D:\github\Study\C#\이것이 C#이다\8장 스크립트 공부\obj\Debug\net7.0\8장 스크립트 공부.csproj.AssemblyReference.cache
+D:\github\Study\C#\이것이 C#이다\8장 스크립트 공부\obj\Debug\net7.0\8장 스크립트 공부.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\Study\C#\이것이 C#이다\8장 스크립트 공부\obj\Debug\net7.0\8장 스크립트 공부.AssemblyInfoInputs.cache
+D:\github\Study\C#\이것이 C#이다\8장 스크립트 공부\obj\Debug\net7.0\8장 스크립트 공부.AssemblyInfo.cs
+D:\github\Study\C#\이것이 C#이다\8장 스크립트 공부\obj\Debug\net7.0\8장 스크립트 공부.csproj.CoreCompileInputs.cache
+D:\github\Study\C#\이것이 C#이다\8장 스크립트 공부\bin\Debug\net7.0\8장 스크립트 공부.exe
+D:\github\Study\C#\이것이 C#이다\8장 스크립트 공부\bin\Debug\net7.0\8장 스크립트 공부.deps.json
+D:\github\Study\C#\이것이 C#이다\8장 스크립트 공부\bin\Debug\net7.0\8장 스크립트 공부.runtimeconfig.json
+D:\github\Study\C#\이것이 C#이다\8장 스크립트 공부\bin\Debug\net7.0\8장 스크립트 공부.dll
+D:\github\Study\C#\이것이 C#이다\8장 스크립트 공부\bin\Debug\net7.0\8장 스크립트 공부.pdb
+D:\github\Study\C#\이것이 C#이다\8장 스크립트 공부\obj\Debug\net7.0\8장 스크립트 공부.dll
+D:\github\Study\C#\이것이 C#이다\8장 스크립트 공부\obj\Debug\net7.0\refint\8장 스크립트 공부.dll
+D:\github\Study\C#\이것이 C#이다\8장 스크립트 공부\obj\Debug\net7.0\8장 스크립트 공부.pdb
+D:\github\Study\C#\이것이 C#이다\8장 스크립트 공부\obj\Debug\net7.0\8장 스크립트 공부.genruntimeconfig.cache
+D:\github\Study\C#\이것이 C#이다\8장 스크립트 공부\obj\Debug\net7.0\ref\8장 스크립트 공부.dll

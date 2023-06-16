@@ -1,0 +1,35 @@
+1. 프로퍼티 : 은닉성과 편의성을 다잡자.
+- 접근_한정자 데이터_형식 프로퍼티_이름
+   {
+	get{	return 필드_이름;	}
+	set{	필드_이름 = valuel;	}
+   }
+- public string Name{get; set;} = "Unknown"; // C# 7.0부터 선언과 동시에 초기화 가능
+
+- init : 초기화 전용 자동구연 프로퍼티 // C# 9.0에서 도입됨.
+   public string From{get; init;}
+   init 접근자를 통해 초기화 이후 읽기전용으로 만들 수 있다.
+
+- required : 프로퍼티 초기화를 강제하는 한정자
+   public required string Name{get; set;}
+   public required DateTime Birthday{get; init;}
+
+- record : 불변객체에서 이뤄지는 연산을 편하게 수행하는 형식 // C# 9.0에서 도입됨.
+ * with : 레코드 복사 - 깊은 복사가 일어남.
+ class_name a = new class_name{Name = "A", Number = "001"};
+ class_name b = a with {Name = "B"};
+
+ * Equals() : 객체 비교
+ a.Equals(b)); // bools 반환
+
+2. 무명형식 : 인스턴스를 만들고 다시는 사용하지 않을 때 유용함, 프로퍼티에 할당된 값은 변경불가능
+- var myInstance = new {Name = "홍길동", Age = "20"};
+   myInstance.Name, myInstance.Age;
+   
+3. 추상 클래스의 프로퍼티
+- interface의 경우 기존 프로퍼티와 동일하게 선언하면 된다. 
+   public string Name{get; set;}
+- abstract 클래스의 경우에는 위처럼 선언시 자동으로 설정하기 때문에
+  abstract public string Name{get; set;} 으로 선언해야한다.
+
+// 위 내용은 '이것이 C#이다'를 공부한 후 작성한 내용입니다.

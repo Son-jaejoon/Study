@@ -1,0 +1,33 @@
+1. 형식 매개변수 : 무분별한 오버로딩을 막아준다.
+- 형식 매개변수 함수
+ * 한정자 반환_형식 메소드_이름<형식_매개변수> (매개변수_목록)
+ * void calculator<T> (T[] source, T[] target)
+ * 호출 : calculator<int>(source, target) / calculator<string>(source, target)
+
+- 일반화 클래스
+ * class 클래스_이름 <형식_매개변수>
+ * class Array_Generic<T>
+   {
+	private T[] array;
+	public T GetElement(int index){return array[index];}
+   }
+ * Array_Generic<int> int_arr = new Array_Generic<int>();
+
+- 형식 매개변수 제약시키는 법
+ * where T : 제약_조건
+ * class MyList<T> where T : MyClass
+ * void Calculator<T> (T[] source, T[] target) where T : struct { }
+ * where T : struct // T는 값 형식이어야 한다.
+ * where T : class // T는 참조 형식이어야 한다.
+ * where T : new() // T는 반드시 매개변수가 없는 생성자가 있어야 한다.
+ * where T : 자식_클래스_이름 // T는 명시한 부모 클래스의 자식 클래스여야 한다.
+ * where T : 인터페이스_이름 // T는 명시한 인터페이스를 반드시 구현해야 한다.
+ * where T : U // T는 또 다른 형식 매개변수 U로부터 상속받은 클래스여야 한다.
+
+- 일반화 컬렉션
+ * List<T> : List<int> list = new List<int>();
+ * Queue<T> : Queue<int> queue = new Queue<int>();
+ * Stack<T> : Stack<int> stack = new Stack<int>();
+ * Dictionary<TKey, TValue> : Dictionary<string, int> dictionary = new Dictionary<string, int>();
+
+// 위 내용은 '이것이 C#이다'를 공부한 후 작성한 내용입니다.

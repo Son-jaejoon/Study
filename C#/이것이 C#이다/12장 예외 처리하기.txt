@@ -1,0 +1,19 @@
+1. try ~ catch
+- try{ // 실행하려는 코드 }
+   catch(예외_객체_1) { // 예외 발생 시 처리 }
+   catch(예외_객체_2) { // 예외 발생 시 처리 }
+   finally{ // 반드시 실행 되는 구문 }
+
+   ex) catch(IndexOutOfRangeException e){ //처리 내용 }
+  
+
+- System.Exception : 모든 예외 객체의 부모격
+
+- 예외 던지기
+ * throw new Exception("예외를 던집니다.")
+    catch(Exceoption e) { e.message; }
+
+- 예외 필터하기 : catch(예외_객체) when ( 조건 )
+ * when을 if라고 생각하면 편함.
+
+// 위 내용은 '이것이 C#이다'를 공부한 후 작성한 내용입니다.

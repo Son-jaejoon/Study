@@ -1,0 +1,60 @@
+1. delegate : 대리자, 메소드 참조
+- 한정자 delegate 반환_형식 대리자_이름(매개변수_목록)
+ * delegate int MyDelegate(int a, int b)	// 선언
+ * MyDelegate Callback;	// 인스턴스 생성
+ * int Plus(int a, int b){ return a + b; }
+ * Callback = new MyDelegate(Plus);
+ * Callback(3, 4);
+
+- 대리자를 사용하는 이유 : '값'이 아닌 '코드' 자체를 매개변수로 넘길 수 있다.
+ * delegate int Compare(int a, int b)
+ * int AscendCompare(int a, int b)
+ * int DescendCompare(int a, int b)
+ * void calculate(int[] DataSet, Compare Comparer)
+   {
+	for(int i = 0 ; i < DataSet.length - 1 ; i++)
+	{
+		if(Comparer(DataSet[i], DataSet[i + 1] > 0 )
+			// 결과
+	}
+   }
+ * calculate(arr, new Compare(AscendCompare));
+
+- 일반화 대리자
+ * delegate int Compare<T>(T a, T b)
+ * int AscendCompare<T>(T a, T b) where T : IComparable<T> 
+ * void calculate<T>(T[] DataSet, Compare<T> comparer)
+ * calculate(arr, new Compare<int>(AscendCompare)
+
+2. 대리자 체인 : 대리자 하나가 메소드 여러 개를 동시에 참조할 수 있다.
+- '+=' 연산자로 결합, Delegate.Combine()
+ * delegate void ThereIsHome(string location);
+ * ThereIsHome house = new ThereIsHome(CallMom);
+ * house += new ThereIsHome(CallBrother);
+ * ThereIsHome("집") ->  CallMom 호출, CallBrother 호출
+ 
+- '-=' 연산자로 제거, Delegate.Remove()
+
+3. 익명 메소드
+- 대리자_인스턴스 = delegate (매개변수_ 목록) { // 실행하려는 코드 };
+ * delegate int Calculate(int a, int b);
+ * Calculate Calc;
+ * Calc = delegate (int a, int  b)
+                { return a + b ; };
+ * Calc(3, 4);
+
+4. 이벤트 : 객체에 일어난 사건 알리기
+- 사용 절차
+ * 1. 대리자를 선언한다.
+    2. 클래스 내에 1에서 선언한 대리자의 인스턴스를 event 한정자로 수식해서 선언한다.
+    3. 이벤트 핸들러를 작성한다. 이벤트 핸들러는 1에서 선언한 대리자와 일치하는 메소드면 된다.
+    4. 클래스의 인스턴스를 생성하고 이 객체의 이벤트에 3에서 작성한 이벤트 핸들러를 등록한다.
+    5. 이벤트가 발생하면 이벤트 핸들러가 호출된다.
+ * delegate void EventHandler(string message);
+ * public event EventHandler SomethingHappend;
+ 
+5. 대리자와 이벤트
+- 이벤트는 public으로 선언하더라도 외부에서 직접 사용할 수 없다.
+- 반면 대리자는 public이나 internal로 수식되어 있으면 클래스 외부에서도 호출 가능하다.
+
+// 위 내용은 '이것이 C#이다'를 공부한 후 작성한 내용입니다.

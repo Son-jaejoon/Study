@@ -1,0 +1,23 @@
+1. 람다식 : 익명 메소드, 무명 함수
+- 매개변수_목록 => 식
+ * delegate int Calculate(int a, int b);
+   Calculate calc = (int a, int b) => a + b;
+
+- 대리자와 람다식이 C#에 모두 공존하는 이유 : 대리자를 이용한 익명 메소드는 C# 2.0 도입, 람다식은 C# 3.0 도입
+
+2. Func & Action : 매번 별개의 대리자를 선언해야 하는 번거로운 일을 없애준다.
+- Func<입력, 반환> 함수명 => (인자) => 식;
+ * Func<int> func1 = () => 10;
+ * Func<int, int> func2 = (x) => x*2;
+ * Func<int, int, int> func3 = (x, y) => x*y;
+
+- Action은 Func과 달리 반환 형식이 없다.
+ * int result = 0;
+   Action<int> act1 = (x) => result = x * x;
+ * Action<double, double> act3 = (x, y) =>
+    {
+	double pi = x / y;
+	Console.WriteLine("Action<T1, T2>({0}, {1}) : {2}", x, y, pi);
+    };
+
+// 위 내용은 '이것이 C#이다'를 공부한 후 작성한 내용입니다.

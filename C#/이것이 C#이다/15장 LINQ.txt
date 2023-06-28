@@ -1,0 +1,45 @@
+1. LINQ 란 ? Language INtegrated Query의 약어로, C#에 통합된 데이터 질의 기능이다.
+- using System.Linq
+- from 범위 변수 in 데이터 원본 (foreach 느낌)
+- where  범위 변수.변수 < 변수 (조건문 느낌)
+- orderby 변수 (기본 오름차순 - ascending, 내림차순 - descending)
+- select 최종결과변수 (profile, profile.name 등 최종으로 걸러진 데이터 중 원하는 데이터를 추출한다.)
+ * Profile[] arrProfile = { new Profile(){name = "홍길동", Height = 175}, … };
+    var profiles = from profile in arrProfile
+	         where profile.Height < 175
+	         orderby profile.Height
+	         select new
+                            {
+		Nmae = profile.Name,
+		InchHeight = profile.Height * 0.393
+	         };
+   foreach(var profile in profiles)
+	Console.WriteLine($"{profile.Nmae}, {profile.InchHeight}");
+
+- 중첩 가능
+ * var classes = from c in arrClass
+		from s in c.Score
+		where s < 60
+	         select new {c.Name, Lowest = s};
+
+- group "A" by "B" into "C" // A : from 절에서 뽑아낸 범위 변수, B : 분류 기준, C : 그룹 변수
+ * B(분류기준)을 기준으로 그룹이 나뉘게 되어 C로 추출 된다.
+ * var listProfile = from profile in arrProfile
+	             orderby profile.Height
+	             group profile by profile.Height < 175 into g
+	             select new {GroupKey = g.key, Profiles = g};
+
+- Join : 두 데이터 원본은 연결
+1. 내부 조인 : 교집합, A 데이터의 a와 B 데이터의 b를 비교하여 (~보다 큼 ,~보다 작음 x 오직 동등비교) 추출(같은 것만 추출)
+  * from a in A
+    Join b in B on a.XXXX equals b.YYYY
+
+2. 외부 조인 : 기본적으로 내부 조인과 비슷하지만, 결과에 기준이 되는 데이터 원본이 모두 포함
+                       (원본 데이터에 비교 데이터가 추가 되는 방식, 추가 될 것이 없으면 공란으로 표기)
+- 내부 조인 + from DefaultIfEmpty 연산을 통해 원본 값 추가.
+ * from a in A
+   Join b in B on a.XXXX equls b.YYYY into ps
+   from b in ps.DefaultIfEmpty(new b(){YYYY = "Empty"}
+   select new {	};
+
+// 위 내용은 '이것이 C#이다'를 공부한 후 작성한 내용입니다.

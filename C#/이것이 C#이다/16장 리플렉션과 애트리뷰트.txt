@@ -1,0 +1,26 @@
+1. 리플렉션 : 객체를 객체의 형식 정보를 들여다보는 기능
+- GetType() : 객체의 형식 정보를 반환하는 기능을 한다.
+ * Type type = a.GetType();
+    FieldInfo[] fields = type.GetFields();
+ * Type 형식의 주로 사용되는 메소드
+   1. GetConstructors() - ConstructorInfo[] : 해당 형식의 모든 생성자 목록을 반환
+   2. GetEvents() - EventInfo[] : 해당 형식의 이벤트 목록을 반환
+   3. GetFields() - FieldInfo[] : 해당 형식의 필드 목록을 반환
+   4. GetGenericArguments() - Type[] : 해당 형식의 형식 매개변수 목록을 반환
+   5. GetInerfaces() - Type[] : 해당 형식이 상속하는 인터페이스 목록을 반환
+   6. GetMembers() - MemberInfo[] : 해당 형식의 멤버 목록을 반환
+   7. GetMethods() - MethodInfo[] : 해당 형식의 메소드 목록을 반환
+   8. GetNestedTypes() - Type[] : 해당 형식의 내장 형식 목록을 반환
+   9. GetProperties() - PropertyInfo[] : 해당 형식의 프로퍼티 목록을 반환
+
+2. 애트리뷰트 : 코드에 대한 부가 정보를 기록하고 읽을 수 있는 기능(런타임 때 알림을 보낼 수 있다. 주석과 다름!)
+- [애트리뷰트_이름(애트리뷰트_매개변수)]
+- [Obsolete("원하는 말")] // 해당 메소드는 실행이 되지만 경고 메세지를 밝힌다. 
+- [CallerMemberName] // 현재 메소드를 호출한 메소드 또는 프로퍼티의 이름을 나타냅니다.
+- [CallerFilePath] // 현재 메소드가 호출된 소스 파일 경로를 나타낸다. 
+	                   이때 경로는 소스 코드를 컴파일할 때의 전체 경로를 나타낸다.
+- [CallerLineNumber] // 현재 메소드가 호출된 소스 파일 내의 행 번호
+- 애트리뷰트 만들기
+ * class Name : System.Attribute // 상속시키면 하나의 애트리뷰트를 만드는 것
+
+// 위 내용은 '이것이 C#이다'를 공부한 후 작성한 내용입니다.
